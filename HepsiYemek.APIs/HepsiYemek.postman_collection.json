@@ -1,0 +1,262 @@
+{
+	"info": {
+		"_postman_id": "8a207072-81bc-407b-af4c-9a2c4e2947c0",
+		"name": "HepsiYemek",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "list product",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44308/Product/list?name=",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44308",
+					"path": [
+						"Product",
+						"list"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add products",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"CategoryId\": \"614abdf1e80362ecdc93179f\",\r\n  \"name\": \"Pilav\",\r\n  \"description\": \"biberli\",\r\n  \"price\": 10,\r\n  \"currency\": \"tl\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44308/Product/products",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44308",
+					"path": [
+						"Product",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get product detail",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44308/Product/products/614ac333640c7a90ab7975e7",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44308",
+					"path": [
+						"Product",
+						"products",
+						"614ac333640c7a90ab7975e7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update products",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n     \r\n    \"category\": \"614abdf1e80362ecdc93179f\",\r\n    \"name\": \"Pilav\",\r\n    \"description\": \"YYY\",\r\n    \"price\": 10,\r\n    \"currency\": \"tl\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44308/Product/products/614ac333640c7a90ab7975e7",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44308",
+					"path": [
+						"Product",
+						"products",
+						"614ac333640c7a90ab7975e7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "product delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44308/Product/products/614a30fec808dc8ea848c74d",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44308",
+					"path": [
+						"Product",
+						"products",
+						"614a30fec808dc8ea848c74d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list category",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44308/Category/list?name=",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44308",
+					"path": [
+						"Category",
+						"list"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add category",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Türk Mutfağı\",\r\n    \"description\": \"bol yağlı\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44308/Category/category",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44308",
+					"path": [
+						"Category",
+						"category"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get category detail",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44308/category/category/614abdf1e80362ecdc93179f",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44308",
+					"path": [
+						"category",
+						"category",
+						"614abdf1e80362ecdc93179f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update category",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"614ac55c7e1d8fc93340de88\",\r\n    \"name\": \"Türk Mutfağı\",\r\n    \"description\": \"bol x\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44308/category/category",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44308",
+					"path": [
+						"category",
+						"category"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "category delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44308/category/category/614ac39b640c7a90ab7975e8",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44308",
+					"path": [
+						"category",
+						"category",
+						"614ac39b640c7a90ab7975e8"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
