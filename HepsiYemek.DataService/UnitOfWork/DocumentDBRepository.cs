@@ -18,9 +18,9 @@ namespace HepsiYemek.DataService.UnitOfWork
             mongoCollection = client.GetCollection<T>(typeof(T).Name);
         }
 
-        public async Task<T> GetByIdAsync(string documentId)
+        public async Task<T> GetByIdAsync(ObjectId documentId)
         {
-            var docId = new ObjectId(documentId);
+            var docId = documentId;
             return await mongoCollection.Find<T>(m => m.Id == docId).FirstOrDefaultAsync();
         }
 
@@ -112,6 +112,7 @@ namespace HepsiYemek.DataService.UnitOfWork
         public virtual async Task<bool> DeleteAsync(string id)
         {
             var docId = new ObjectId(id);
+
             await mongoCollection.DeleteOneAsync(m => m.Id == docId);
 
             return true;

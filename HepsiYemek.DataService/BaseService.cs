@@ -15,7 +15,7 @@ namespace HepsiYemek.DataService
     {
         public IDocumentDBRepository<T> _documentDBRepository;
 
-        public virtual async Task<T> GetById(string Id)
+        public virtual async Task<T> GetById(ObjectId Id)
         {
             var result = await _documentDBRepository.GetByIdAsync(Id);
 
@@ -76,13 +76,7 @@ namespace HepsiYemek.DataService
             return model;
         }
 
-        public virtual Task<IChangeStreamCursor<ChangeStreamDocument<T>>> WatchGetListAsync( )
-        {
-            var model = _documentDBRepository.WatchGetListAsync( );
-            return model;
-        }
-
-
+        
 
 
         public virtual async Task<bool> Delete(string id)

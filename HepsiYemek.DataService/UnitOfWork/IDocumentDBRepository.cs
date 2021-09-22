@@ -1,4 +1,5 @@
-﻿using MongoDB.Driver;
+﻿using MongoDB.Bson;
+using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +16,7 @@ namespace HepsiYemek.DataService.UnitOfWork
         Task<T> UpdateAsync(string id, T model);
         List<T> GetListQueryable(Expression<Func<T, bool>> predicate =null, int? take = null);
         Task<IChangeStreamCursor<ChangeStreamDocument<T>>> WatchGetListAsync( );
-        Task<T> GetByIdAsync(string Id);
+        Task<T> GetByIdAsync(ObjectId Id);
 
         Task<bool>  DeleteAsync(string id);
         Task<long> GetCountTotal(Expression<Func<T, bool>> predicate = null);

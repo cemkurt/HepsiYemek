@@ -31,6 +31,7 @@ namespace HepsiYemek.APIs
 
             services.AddStackExchangeRedisExtensions<NewtonsoftSerializer>(redisConfiguration);
 
+            services.AddAutoMapper(typeof(MappingProfile));
 
 
             services.AddSingleton<ICategoryService, CategoryService>();
@@ -44,6 +45,8 @@ namespace HepsiYemek.APIs
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
+                c.EnableAnnotations();
+
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "HepsiYemek.APIs", Version = "v1" });
             });
         }
