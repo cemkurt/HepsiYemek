@@ -1,7 +1,7 @@
-version: "3"
+version: '3.4'
 
-services: 
-      
+services:
+  
   redis:
     image: redis:latest
     container_name: hepsiredis
@@ -17,15 +17,16 @@ services:
     container_name: hepsimongo
     ports: 
      - 27017:27017
-  
+
+
+  hepsiyemek.apis:
+    image: ${DOCKER_REGISTRY-}hepsiyemekapis
+    build:
+      context: .
+      dockerfile: HepsiYemek.APIs/Dockerfile
+
+
+
 networks: 
-  logging-network:
-    driver: bridge
   hepsi-network:
     driver: bridge
-    
- 
-      
-volumes:
-  elasticsearch-data:
-  portainer_data:
